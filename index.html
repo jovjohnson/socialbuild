@@ -11,20 +11,18 @@
 <body ng-app="socialApp">
   <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
     <div class="container">
+      <div><input type="text" ng-model='login.email' placeholder="email address">
+        <input type="password" ng-model='login.password'  placeholder="password">
+        <button class="btn">Login</button> <a ui-sref='register'>Create An Account</a>
+      </div>
     </div>
   </nav>
   <br>
   <br>
   <br>
   <div class="container">
-
-
-
-
-
     <ui-view>
     </ui-view>
-
   </div>
 </body>
 

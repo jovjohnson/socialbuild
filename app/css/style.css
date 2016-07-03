@@ -1,0 +1,22 @@
+body {
+  margin-top: 75px;
+  background: #fc00ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #fc00ff, #00dbde);
+  background: -o-linear-gradient(right, #fc00ff, #00dbde);
+  background: linear-gradient(to left, #fc00ff, #00dbde); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.register-form
+{
+  background: #ccc;
+  opacity: 0.8;
+}
+
+.navbar {
+  padding: 7px;
+}
+
+input.form-control {
+  border: none;
+  border-radius: 1px;
+}
