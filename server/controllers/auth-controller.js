@@ -9,3 +9,15 @@ module.exports.register = function(req, res) {
 
   res.json(req.body);
 };
+
+module.exports.login = function(req, res) {
+  User.find(req.body, function(err, results) {
+    if (err) {
+      console.log("THERE'S AN ERROR");
+    }
+
+    if(results && results.length === 1) {
+      res.json(req.body.email);
+    }
+  })
+}

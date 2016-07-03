@@ -9,11 +9,11 @@
 
 </head>
 <body ng-app="socialApp">
-  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" ng-controller='navCtrl'>
     <div class="container">
       <div><input type="text" ng-model='login.email' placeholder="email address">
         <input type="password" ng-model='login.password'  placeholder="password">
-        <button class="btn">Login</button> <a ui-sref='register'>Create An Account</a>
+        <button class="btn" ng-click='logUserIn()'>Login</button> <a ui-sref='register'>Create An Account</a>
       </div>
     </div>
   </nav>
