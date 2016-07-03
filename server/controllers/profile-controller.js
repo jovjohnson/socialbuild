@@ -9,19 +9,27 @@ module.exports.updatePhoto = function(req, res) {
   var userId = req.body.userId;
 
   console.log("User " + userId + " is submitting" , file)
-  var uploadDate = new Date().toISOString;
-  // uploadDate = uploadDate.replace(".", "");
-  //   uploadDate = uploadDate.replace("-", "");
-  //   uploadDate = uploadDate.replace(":", "");
+  var uploadDate = new Date();
 
   var tempPath = file.path;
   var targetPath = path.join(__dirname, "../../uploads/" + userId + uploadDate + file.name);
+  var savePath = "../../uploads/" + userId + uploadDate + file.name;
 
   fs.rename(tempPath, targetPath, function(err) {
     if (err) {
       console.log(err)
     } else {
-      console.log("file moved");
+      User.findById(userId, function(err, data) {
+        var user = data;
+        user.image = savePath;
+        user.save(function(err) {
+          if(err) {
+            console.log('failed to save');
+          } else {
+            console.log('save successful');
+          }
+        })
+      })
     }
   })
 
