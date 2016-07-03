@@ -20,3 +20,8 @@ input.form-control {
   border: none;
   border-radius: 1px;
 }
+
+.reg-page {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 55px;
+}

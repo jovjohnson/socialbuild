@@ -15,8 +15,7 @@ module.exports.login = function(req, res) {
     if (err) {
       console.log("THERE'S AN ERROR");
     }
-
-    if(results && results.length === 1) {
+    if (results && results.length === 1) {
       res.json(req.body.email);
     }
   })
