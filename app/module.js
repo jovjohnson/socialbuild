@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('socialApp', ['ui.router']);
+var app = angular.module('socialApp', ['ui.router', 'ngFileUpload']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider

@@ -39,6 +39,6 @@ app.controller('navCtrl', function($scope, $state, $http) {
   }
 });
 
-app.controller('editCtrl', function($scope, $state, $http) {
+app.controller('editCtrl', function($scope, $state, $http, Upload) {
   console.log('edit me binch');
 })
