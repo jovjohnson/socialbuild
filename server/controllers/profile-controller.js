@@ -3,6 +3,7 @@
 var User = require('../models/User');
 var fs = require('fs-extra');
 var path = require('path');
+var mongoose = require('mongoose');
 
 module.exports.updatePhoto = function(req, res) {
   var file = req.files.file;
@@ -25,12 +26,32 @@ module.exports.updatePhoto = function(req, res) {
         user.save(function(err) {
           if(err) {
             console.log('failed to save');
+            res.json({status: 500})
           } else {
             console.log('save successful');
+            res.json({status: 200})
           }
         })
       })
     }
   })
+}
 
+module.exports.updateUsername = function(req, res) {
+  var username = req.body.username;
+  var userId = req.body.userId;
+
+  User.findById(userId, function(err, data) {
+    var user = data;
+    user.username = username;
+    user.save(function(err) {
+      if(err) {
+        console.log('fail')
+        res.json({status: 500})
+      } else {
+        console.log('username update successful')
+        res.json({status: 200})
+      }
+    })
+  })
 }

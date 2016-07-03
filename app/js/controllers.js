@@ -66,4 +66,18 @@ app.controller('editCtrl', function($scope, $state, $http, Upload) {
       })
     }
   }
+
+  $scope.updateUsername = function() {
+    var request = {
+      userId: $scope.user._id,
+      username: $scope.user.username
+    }
+
+    $http.post('api/profile/updateUsername', request)
+    .success(function() {
+      console.log('success!')
+    }).error(function(err) {
+      console.log(err);
+    })
+  }
 })

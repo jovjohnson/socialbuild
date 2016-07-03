@@ -25,6 +25,7 @@ app.get('/', function(req, res) {
 //auth
 app.post('/api/user/register', authController.register);
 app.post('/api/user/login', authController.login);
+app.post('/api/profile/updateUsername', profileController.updateUsername);
 
 //profile
 app.post('/api/profile/edit-photo', multipartMiddleware, profileController.updatePhoto);
