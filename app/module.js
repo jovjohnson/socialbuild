@@ -8,7 +8,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     // .state('lineup', { url: '/lineup', templateUrl: 'partials/lineup.html', controller: 'lineupCtrl' })
     // .state('detail', { url: '/detail', templateUrl: 'partials/detail.html', controller: 'detailCtrl' })
     // .state('login', { url: '/login', templateUrl: 'partials/login.html', controller: 'loginCtrl' })
-    .state('register', { url: '/register', templateUrl: 'app/partials/register.html'})
+    .state('register', { url: '/register', templateUrl: 'app/partials/register.html', controller: 'registerCtrl'})
   $urlRouterProvider.otherwise('/');
 
   // $locationProvider.html5Mode('true');
