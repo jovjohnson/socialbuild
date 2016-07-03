@@ -53,7 +53,7 @@ app.controller('editCtrl', function($scope, $state, $http, Upload) {
   $scope.upload = function(file) {
     if(file) {
       Upload.upload({
-        url: 'api/profile/edit',
+        url: 'api/profile/edit-photo',
         method: 'POST',
         data: {userId: $scope.user._id},
         file: file
