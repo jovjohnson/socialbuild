@@ -25,3 +25,7 @@ input.form-control {
   font-family: 'Catamaran', sans-serif;
   font-size: 55px;
 }
+
+.nav-link {
+  color: #E612FC;
+}
