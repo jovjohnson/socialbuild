@@ -22,6 +22,9 @@ app.get('/', function(req, res) {
 app.post('/api/user/register', authController.register);
 app.post('/api/user/login', authController.login);
 
+//profile
+// app.post('/api/profile/edit');
+
 app.listen('3000', function() {
   console.log('listening for "run away with me" saxaphone ');
 });

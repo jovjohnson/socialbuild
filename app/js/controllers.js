@@ -35,10 +35,35 @@ app.controller('navCtrl', function($scope, $state, $http) {
       $scope.login = '';
     }).error(function(err) {
       console.log(err);
-    })
+    });
   }
 });
 
 app.controller('editCtrl', function($scope, $state, $http, Upload) {
   console.log('edit me binch');
+
+  $scope.user = JSON.parse(localStorage['User-Data']) || undefined;
+
+  $scope.$watch(function() {
+    return $scope.file
+  }, function() {
+    $scope.upload($scope.file);
+  });
+
+  $scope.upload = function(file) {
+    if(file) {
+      Upload.upload({
+        url: 'api/profile/edit',
+        method: 'POST',
+        data: {userId: $scope.user._id},
+        file: file
+      }).progress(function(event) {
+        console.log('firing!!!');
+      }).success(function(data) {
+
+      }).error(function(err) {
+        console.log(err);
+      })
+    }
+  }
 })
