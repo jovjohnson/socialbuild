@@ -3,16 +3,21 @@
 var app = angular.module('socialApp');
 
 app.controller('indexCtrl', function($scope, $state) {
-  // if(localStorage['User-Data']) {
-  //   $scope.loggedIn = true;
-  // } else {
-  //   $scope.loggedIn = false;
-  // }
-  //
+
   // $state.go('home');
 })
 
 app.controller('homeCtrl', function($scope, $state, $http) {
+  if(localStorage['User-Data'] !== undefined) {
+    $scope.user = JSON.parse(localStorage['User-Data']);
+    console.log($scope.user);
+  }
+
+  $scope.sendMessage  = function(event) {
+    if(event.which === 13) {
+      var request = {};
+    }
+  }
 
 })
 

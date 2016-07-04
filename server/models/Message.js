@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var MessageSchema = new mongoose.Schema({
   user: String,
   userId: String,
+  image: String,
   content: String,
   date: {type: Date, default: Date.now}
 });

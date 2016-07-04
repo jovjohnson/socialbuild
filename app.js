@@ -9,6 +9,7 @@ var multipartMiddleware = multipart();
 var app = express();
 var authController = require('./server/controllers/auth-controller');
 var profileController = require('./server/controllers/profile-controller');
+var messageController = require('./server/controllers/message-controller');
 
 mongoose.connect('mongodb://localhost/socialapp');
 
@@ -31,6 +32,11 @@ app.post('/api/profile/updateBio', profileController.updateBio);
 
 //profile
 app.post('/api/profile/edit-photo', multipartMiddleware, profileController.updatePhoto);
+
+//msgs
+app.post('/api/messages/post', messageController.postMessage);
+
+
 
 app.listen('3000', function() {
   console.log('listening for run away with me saxaphone ');
