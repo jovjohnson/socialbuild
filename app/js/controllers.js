@@ -3,17 +3,17 @@
 var app = angular.module('socialApp');
 
 app.controller('indexCtrl', function($scope, $state) {
-  if(localStorage['User-Data']) {
-    $scope.loggedIn = true;
-  } else {
-    $scope.loggedIn = false;
-  }
-
-  $state.go('home');
+  // if(localStorage['User-Data']) {
+  //   $scope.loggedIn = true;
+  // } else {
+  //   $scope.loggedIn = false;
+  // }
+  //
+  // $state.go('home');
 })
 
-app.controller('homeCtrl', function($scope, $state) {
-  
+app.controller('homeCtrl', function($scope, $state, $http) {
+
 })
 
 app.controller('registerCtrl', function($scope, $state, $http) {
