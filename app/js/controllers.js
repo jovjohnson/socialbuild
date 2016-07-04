@@ -10,12 +10,23 @@ app.controller('indexCtrl', function($scope, $state) {
 app.controller('homeCtrl', function($scope, $state, $http) {
   if(localStorage['User-Data'] !== undefined) {
     $scope.user = JSON.parse(localStorage['User-Data']);
-    console.log($scope.user);
   }
 
   $scope.sendMessage  = function(event) {
-    if(event.which === 13) {
-      var request = {};
+    if (event.which === 13) {
+      var request = {
+        user: $scope.user.username || $scope.user.email,
+        userId: $scope.user._id,
+        image: $scope.user.image,
+        content: $scope.newMessage
+      }
+
+      $http.post('api/messages/post', request)
+      .success(function(res) {
+        console.log('post it fat')
+      }).error(function(err) {
+        console.log(err);
+      })
     }
   }
 
