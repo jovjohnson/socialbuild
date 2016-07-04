@@ -25,6 +25,7 @@ app.controller('homeCtrl', function($scope, $state, $http) {
       .success(function(res) {
         console.log('post it fat', res);
         $scope.messages = res;
+        $scope.newMessage = '';
       }).error(function(err) {
         console.log(err);
       })
