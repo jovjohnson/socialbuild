@@ -5,14 +5,15 @@
     </textarea>
   </div>
   <div class="row">
-    <table>
+    <table class="message-section">
       <tr ng-repeat='message in messages'>
         <td>
           {{message.user}}
           <image ng-src="{{message.image}}" class="img-responsive"></image>
         </td>
         <td>
-          {{ waste.date | date: 'MM/dd/yyyy hh:mm'}}
+          <strong>{{ waste.date | date: 'MM/dd/yyyy hh:mm'}}</strong>
+          <p>{{message.content}}</p>
         </td>
       </tr>
     </table>

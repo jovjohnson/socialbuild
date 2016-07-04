@@ -42,3 +42,8 @@ input.form-control {
   font-size: 100px;
   opacity: 0.9;
 }
+
+.message-section img {
+  width: 100px;
+  height: 100px;
+}
