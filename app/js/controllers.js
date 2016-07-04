@@ -23,7 +23,8 @@ app.controller('homeCtrl', function($scope, $state, $http) {
 
       $http.post('api/messages/post', request)
       .success(function(res) {
-        console.log('post it fat')
+        console.log('post it fat', res);
+        $scope.messages = res;
       }).error(function(err) {
         console.log(err);
       })

@@ -1,12 +1,12 @@
 'use strict';
 
-var Message = ('../models/Message');
+var Message = require('../models/Message');
 
 module.exports.postMessage = function(req, res) {
   var message = new Message(req.body);
   message.save();
 
-  Message.find({}, function(err, allWastes) {
+  Message.find({}, function(err, allMessages) {
     if (err) {
       res.error(error);
     } else {
