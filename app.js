@@ -35,6 +35,7 @@ app.post('/api/profile/updateBio', profileController.updateBio);
 app.post('/api/profile/edit-photo', multipartMiddleware, profileController.updatePhoto);
 
 //msgs
+app.get('/api/messages/get', messageController.getMessages);
 app.post('/api/messages/post', messageController.postMessage);
 
 

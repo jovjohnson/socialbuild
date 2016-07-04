@@ -32,6 +32,10 @@ app.controller('homeCtrl', function($scope, $state, $http) {
     }
   }
 
+  function getMessages(init) {
+
+  }
+
 })
 
 app.controller('registerCtrl', function($scope, $state, $http) {
