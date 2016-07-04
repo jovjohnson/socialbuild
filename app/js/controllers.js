@@ -8,6 +8,9 @@ app.controller('indexCtrl', function($scope, $state) {
 })
 
 app.controller('homeCtrl', function($scope, $state, $http) {
+
+  getMessages();
+
   if(localStorage['User-Data'] !== undefined) {
     $scope.user = JSON.parse(localStorage['User-Data']);
   }
@@ -33,7 +36,12 @@ app.controller('homeCtrl', function($scope, $state, $http) {
   }
 
   function getMessages(init) {
-
+    $http.get('api/messages/get')
+    .success(function(res) {
+      $scope.messages = res;
+    }).error(function(err) {
+      console.log(err);
+    })
   }
 
 })
