@@ -2,8 +2,18 @@
 
 var app = angular.module('socialApp');
 
+app.controller('indexCtrl', function($scope, $state) {
+  if(localStorage['User-Data']) {
+    $scope.loggedIn = true;
+  } else {
+    $scope.loggedIn = false;
+  }
+
+  $state.go('home');
+})
+
 app.controller('homeCtrl', function($scope, $state) {
-  console.log('homeCtrl');
+  
 })
 
 app.controller('registerCtrl', function($scope, $state, $http) {
@@ -33,10 +43,17 @@ app.controller('navCtrl', function($scope, $state, $http) {
       localStorage.setItem('User-Data', JSON.stringify(res));
       $scope.loggedIn = true;
       $scope.login = '';
+      $state.go('home');
     }).error(function(err) {
       console.log(err);
     });
   }
+
+  $scope.logout = function() {
+    localStorage.clear();
+    $scope.loggedIn = false;
+  }
+
 });
 
 app.controller('editCtrl', function($scope, $state, $http, Upload) {
@@ -92,4 +109,5 @@ app.controller('editCtrl', function($scope, $state, $http, Upload) {
       console.log(err)
     })
   }
+
 })
