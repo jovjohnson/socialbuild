@@ -46,7 +46,7 @@ module.exports.updateUsername = function(req, res) {
     user.username = username;
     user.save(function(err) {
       if(err) {
-        console.log('fail')
+        console.log('username update failed')
         res.json({status: 500})
       } else {
         console.log('username update successful')
@@ -54,4 +54,24 @@ module.exports.updateUsername = function(req, res) {
       }
     })
   })
+}
+
+module.exports.updateBio = function(req, res) {
+  var bio = req.body.bio;
+  var userId = req.body.userId;
+
+  User.findById(userId, function(err, data) {
+    var user = data;
+    user.bio = bio;
+    user.save(function(err) {
+      if(err) {
+        console.log('bio update failed')
+        res.json({status: 500})
+      } else {
+        console.log('bio update successful')
+        res.json({status: 200})
+      }
+    })
+  })
+
 }
