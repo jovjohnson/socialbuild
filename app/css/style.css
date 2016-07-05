@@ -55,3 +55,13 @@ input.form-control {
 .message-section img {
   margin-bottom: 7px;
 }
+
+.splash {
+  line-height: 0.5px;
+}
+
+.splash p {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 25px;
+  margin-left: 125px;
+}
