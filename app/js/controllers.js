@@ -33,6 +33,8 @@ app.controller('homeCtrl', function($scope, $state, $http) {
         console.log(err);
       })
     }
+
+    getMessages();
   }
 
   function getMessages(init) {
