@@ -28,7 +28,7 @@ module.exports.updatePhoto = function(req, res) {
             console.log('failed to save');
             res.json({status: 500})
           } else {
-            console.log('save successful');
+            console.log('save successful', user.image);
             res.json({status: 200})
           }
         })

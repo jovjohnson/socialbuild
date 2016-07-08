@@ -7,13 +7,17 @@
     ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100px}"><button>Select A Profile Image</button></div>
   </div>
   <br>
-
-
-  <div class="row">
-    <input type="text" class="form-control" ng-model='user.username' ng-blur='updateUsername()'>
-  </div>
   <br>
   <div class="row">
-    <textarea class="form-control" ng-model='user.bio' ng-blur='updateBio()'></textarea>
+    <input type="text" class="form-control" ng-model='user.username'>
+    <br>
+    <button class="btn btn-default" ng-click='updateUsername()'>save username</button>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <textarea class="form-control" ng-model='user.bio'></textarea>
+    <br>
+    <button class="btn btn-default" ng-click='updateBio()'>save bio</button>
   </div>
 </div>

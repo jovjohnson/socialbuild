@@ -24,6 +24,8 @@ app.controller('homeCtrl', function($scope, $state, $http, $interval) {
         content: $scope.newMessage
       }
 
+      console.log(request);
+
       $http.post('api/messages/post', request)
       .success(function(res) {
         console.log('post it fat', res);
