@@ -104,6 +104,7 @@ app.controller('navCtrl', function($scope, $state, $http) {
   $scope.logout = function() {
     localStorage.clear();
     $scope.loggedIn = false;
+    location.reload();
   }
 
 });
