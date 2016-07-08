@@ -55,15 +55,16 @@ app.controller('homeCtrl', function($scope, $state, $http, $interval) {
 
   $interval(function() {
     getMessages(false);
+    if($scope.incomingMessages) {
     $scope.difference = $scope.incomingMessages.length - $scope.wastes.length;
-  }, 5000);
+  } console.log('binch hey')
+}, 7000);
 
 
   $scope.setNewMessages = function() {
     $scope.messages = angular.copy($scope.incomingMessages);
     $scope.incomingMessages = undefined;
-  }
-
+  };
 
 })
 
