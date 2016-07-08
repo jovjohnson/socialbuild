@@ -95,7 +95,7 @@ app.controller('navCtrl', function($scope, $state, $http) {
       localStorage.setItem('User-Data', JSON.stringify(res));
       $scope.loggedIn = true;
       $scope.login = '';
-      $state.go('home');
+      $state.go('messages');
     }).error(function(err) {
       console.log(err);
     });
@@ -104,7 +104,8 @@ app.controller('navCtrl', function($scope, $state, $http) {
   $scope.logout = function() {
     localStorage.clear();
     $scope.loggedIn = false;
-    location.reload();
+
+    $state.go('home');
   }
 
 });
