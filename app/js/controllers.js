@@ -7,9 +7,9 @@ app.controller('indexCtrl', function($scope, $state) {
   // $state.go('home');
 })
 
-app.controller('homeCtrl', function($scope, $state, $http) {
+app.controller('homeCtrl', function($scope, $state, $http, $interval) {
 
-  getMessages();
+  getMessages(true);
 
   if(localStorage['User-Data'] !== undefined) {
     $scope.user = JSON.parse(localStorage['User-Data']);
@@ -32,19 +32,38 @@ app.controller('homeCtrl', function($scope, $state, $http) {
       }).error(function(err) {
         console.log(err);
       })
-    }
+    };
 
-    getMessages();
+
+    getMessages(true);
   }
 
   function getMessages(init) {
     $http.get('api/messages/get')
     .success(function(res) {
-      $scope.messages = res;
+      if(init) {
+        $scope.messages = res;
+      } else {
+        if(res.length > $scope.messages.length){
+        $scope.incomingMessages = res;
+      }
+    }
     }).error(function(err) {
       console.log(err);
     })
   }
+
+  $interval(function() {
+    getMessages(false);
+    $scope.difference = $scope.incomingMessages.length - $scope.wastes.length;
+  }, 5000);
+
+
+  $scope.setNewMessages = function() {
+    $scope.messages = angular.copy($scope.incomingMessages);
+    $scope.incomingMessages = undefined;
+  }
+
 
 })
 

@@ -6,6 +6,7 @@
   <br>
   <div class="row">
     <table class="message-section">
+      <tr ng-show='incomingMessages'><a ng-click='setNewMessages()'>There are {{difference}} new messages.</a></tr>
       <tr ng-repeat='message in messages'>
         <td>
           {{message.user}}
