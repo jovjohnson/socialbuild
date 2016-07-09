@@ -167,3 +167,7 @@ app.controller('editCtrl', function($scope, $state, $http, Upload) {
   }
 
 })
+
+app.controller('followCtrl', function($scope, $state, $http, $interval) {
+  console.log('follow me bincj')
+});
