@@ -7,7 +7,9 @@ var UserSchema = new mongoose.Schema({
   username: String,
   password: String,
   image: String,
-  bio: String
+  bio: String,
+  following: [{userId: String, username: String}],
+  followers: [{userId: String, username: String}]
 });
 
 
