@@ -19,7 +19,9 @@
         <input type="password" ng-model='login.password'  placeholder="password">
         <button class="btn" ng-click='logUserIn()'>Login</button> <a ui-sref='register' class="nav-link">Create An Account</a>
       </div>
-      <div ng-show='loggedIn'> <a class='nav-link' ui-sref='messages'>Dashboard</a> <a ui-sref='edit-profile' class='nav-link'>Edit Profile</a>
+      <div ng-show='loggedIn'> <a class='nav-link' ui-sref='messages'>Dashboard | </a>
+      <a ui-sref='follow' class="nav-link">Follow Users | </a>
+      <a ui-sref='edit-profile' class='nav-link'>Edit Profile | </a>
       <a ng-click='logout()' class="nav-link">Logout</a>
       </div>
     </div>
