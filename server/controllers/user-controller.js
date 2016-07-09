@@ -17,5 +17,14 @@ module.exports.followUser = function(req, res) {
   var userId = req.body.userId;
   var wasterId = req.body.wasterId;
 
-  console.log('this is waster', wasterId, 'this is the follower', userId); 
+  User.findById(wasterId, function(err, waster) {
+    waster.followers.push({userId: userId});
+    waster.save();
+  })
+
+  User.findById(userId, function(err, follower) {
+    follower.following.push({userId: wasterId})
+    follower.save();
+  })
+
 }
