@@ -12,3 +12,10 @@ module.exports.getUsers = function(req, res) {
     }
   })
 }
+
+module.exports.followUser = function(req, res) {
+  var userId = req.body.userId;
+  var wasterId = req.body.wasterId;
+
+  console.log('this is waster', wasterId, 'this is the follower', userId); 
+}

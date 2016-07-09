@@ -40,7 +40,8 @@ app.get('/api/messages/get', messageController.getMessages);
 app.post('/api/messages/post', messageController.postMessage);
 
 //user
-app.get('/api/users/get', userController.getUsers); 
+app.get('/api/users/get', userController.getUsers);
+app.post('/api/users/follow', userController.followUser);
 
 app.listen('3000', function() {
   console.log('listening for run away with me saxaphone ');

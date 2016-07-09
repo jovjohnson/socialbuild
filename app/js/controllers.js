@@ -177,4 +177,14 @@ app.controller('followCtrl', function($scope, $state, $http, $interval) {
     $scope.users = res.data;
     console.log(res.data);
   })
+
+  $scope.follow = function(userId, wasterId) {
+    var data = { userId: userId,
+                 wasterId: wasterId
+            };
+    $http.post('api/users/follow', data)
+    .then(function(err) {
+      console.log('following', wasterId);
+    })
+  }
 });
