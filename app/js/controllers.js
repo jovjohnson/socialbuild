@@ -3,7 +3,6 @@
 var app = angular.module('socialApp');
 
 app.controller('indexCtrl', function($scope, $state) {
-
   // $state.go('home');
 })
 
@@ -169,5 +168,13 @@ app.controller('editCtrl', function($scope, $state, $http, Upload) {
 })
 
 app.controller('followCtrl', function($scope, $state, $http, $interval) {
-  console.log('follow me bincj')
+
+  $scope.user = JSON.parse(localStorage['User-Data']);
+  console.log($scope.user);
+
+  $http.get('api/users/get')
+  .then(function(res) {
+    $scope.users = res.data;
+    console.log(res.data);
+  })
 });

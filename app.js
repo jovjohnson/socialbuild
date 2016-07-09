@@ -10,6 +10,7 @@ var app = express();
 var authController = require('./server/controllers/auth-controller');
 var profileController = require('./server/controllers/profile-controller');
 var messageController = require('./server/controllers/message-controller');
+var userController = require('./server/controllers/user-controller');
 
 mongoose.connect('mongodb://localhost/socialapp');
 
@@ -38,7 +39,8 @@ app.post('/api/profile/edit-photo', multipartMiddleware, profileController.updat
 app.get('/api/messages/get', messageController.getMessages);
 app.post('/api/messages/post', messageController.postMessage);
 
-
+//user
+app.get('/api/users/get', userController.getUsers); 
 
 app.listen('3000', function() {
   console.log('listening for run away with me saxaphone ');
