@@ -187,4 +187,12 @@ app.controller('followCtrl', function($scope, $state, $http, $interval) {
       console.log('following', wasterId);
     })
   }
+
+  $scope.checkIsFollowing = function(waster._id) {
+    for(var i = 0, len = $scope.user.following.length; i < len; i++) {
+      if($scope.user.following[i].userId === wasterId) {
+        return true;
+      }
+    }
+  }
 });
