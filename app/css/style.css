@@ -70,3 +70,8 @@ a:hover {
   font-style: none;
   color: #fff;
 }
+
+.follow {
+  float: right;
+  margin-right: 200px;
+}

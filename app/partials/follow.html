@@ -1,6 +1,21 @@
-<ul>
+<!-- <ul>
   <li ng-repeat='waster in users' ng-show="user._id !== waster._id">
-    {{waster.email}} <a ng-click="follow(user._id, waster._id)" ng-hide='checkIsFollowing(waster._id)'>follow</a>
-    <a ng-click='unfollow(user.id, waster._id)' ng-show='checkIsFollowing(waster._id)'>unfollow</a>
+    {{waster.email}} <a ng-click="follow(user._id, waster._id)" ng-hide='checkIsFollowing(waster._id)'
+    class="follow">follow</a>
+    <a ng-click='unfollow(user.id, waster._id)' ng-show='checkIsFollowing(waster._id)'
+    class="follow">unfollow</a>
   </li>
-</ul>
+</ul> -->
+
+
+<table>
+  <tbody>
+    <tr ng-repeat='waster in users' ng-show='user._id !-- waster._id'>
+      <td>{{waster.email}}</td>
+      <td><a ng-click="follow(user._id, waster._id)" ng-hide='checkIsFollowing(waster._id)'
+      class="follow">follow</a>
+      <a ng-click='unfollow(user.id, waster._id)' ng-show='checkIsFollowing(waster._id)'
+      class="follow">unfollow</a></td>
+    </tr>
+  </tbody>
+</table>
