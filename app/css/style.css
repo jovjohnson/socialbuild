@@ -71,7 +71,7 @@ a:hover {
   color: #fff;
 }
 
-.follow {
-  float: right;
-  margin-right: 200px;
+.follow td {
+  padding-right: 45px;
+  padding-bottom: 10px;
 }
