@@ -2,9 +2,7 @@
 
 var app = angular.module('socialApp');
 
-app.controller('indexCtrl', function($scope, $state) {
-  // $state.go('home');
-})
+app.controller('indexCtrl', function($scope, $state) {});
 
 app.controller('homeCtrl', function($scope, $state, $http, $interval) {
 
