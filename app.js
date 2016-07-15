@@ -43,6 +43,8 @@ app.post('/api/messages/post', messageController.postMessage);
 app.get('/api/users/get', userController.getUsers);
 app.post('/api/users/follow', userController.followUser);
 
+
+//initiation
 app.listen('3000', function() {
   console.log('listening for run away with me saxaphone ');
 });
