@@ -5,7 +5,7 @@ var app = angular.module('socialApp');
 app.controller('indexCtrl', function($scope, $state) {});
 
 app.controller('homeCtrl', function($scope, $state, $http, $interval) {
-
+  
   getMessages(true);
 
   if(localStorage['User-Data'] !== undefined) {
@@ -32,8 +32,6 @@ app.controller('homeCtrl', function($scope, $state, $http, $interval) {
         console.log(err);
       })
     };
-
-
     getMessages(true);
   }
 

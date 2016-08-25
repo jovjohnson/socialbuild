@@ -8,8 +8,8 @@ var UserSchema = new mongoose.Schema({
   password: String,
   image: String,
   bio: String,
-  following: [{userId: String}],
-  followers: [{userId: String}]
+  following: [{ userId: String }],
+  followers: [{ userId: String }]
 });
 
 
